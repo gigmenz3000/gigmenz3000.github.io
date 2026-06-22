@@ -20,6 +20,8 @@
     line-height:1.5;
   }
   a{text-decoration:none;color:inherit;}
+  a[href^="tel:"]{cursor:pointer;}
+  a[href^="tel:"]:hover{color:var(--blue);text-decoration:underline;}
   .container{max-width:1100px;margin:0 auto;padding:0 24px;}
 
   /* Header */
@@ -159,7 +161,7 @@
     <a href="#contacts">Контакты</a>
   </nav>
   <div class="contact-info">
-    <strong>+7 910 895 32 57</strong>
+    <strong><a href="tel:+79601850730">+7 960 185 07 30</a></strong>
     Москва, дистанционно
   </div>
 </header>
@@ -174,7 +176,7 @@
   <div>
     <h1>Репетитор по математике<br>с опытом более 5 лет</h1>
     <p>Я — <strong>Крылов Степан</strong>, преподаватель математики. Готовлю учеников к ЕГЭ и ОГЭ, помогаю разобраться в школьной программе и повысить успеваемость. Объясняю сложные темы простым языком, без лишней зубрёжки.</p>
-    <a href="#contacts" class="btn">Записаться на пробное занятие</a>
+    <a href="https://t.me/KiRiTo12_2" target="_blank" class="btn">Записаться на пробное занятие</a>
   </div>
 </section>
 
@@ -294,7 +296,7 @@
 
 <footer id="contacts" class="container">
   <p><strong>Крылов Степан</strong> — репетитор по математике</p>
-  <p>+7 910 895 32 57 · Москва, дистанционно</p>
+  <p><a href="tel:+79601850730">+7 960 185 07 30</a> · Москва, дистанционно</p>
 </footer>
 
 <script>
