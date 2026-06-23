@@ -23,22 +23,22 @@
   a[href^="tel:"]{cursor:pointer;}
   a[href^="tel:"]:hover{color:var(--blue);text-decoration:underline;}
   .container{max-width:1100px;margin:0 auto;padding:0 24px;}
-
+ 
   /* Header */
   header{
     display:flex;justify-content:space-between;align-items:center;
-    padding:24px 0;
+    padding-top:24px;padding-bottom:24px;
   }
   header nav{display:flex;gap:32px;font-weight:500;}
   header nav a{color:var(--text);opacity:.85;}
   header nav a:hover{opacity:1;color:var(--blue);}
   .contact-info{text-align:right;font-size:14px;color:var(--muted);}
   .contact-info strong{display:block;color:var(--text);font-size:15px;}
-
+ 
   /* Hero */
   .hero{
     display:grid;grid-template-columns:1fr 1fr;gap:48px;
-    align-items:center;padding:48px 0 80px;
+    align-items:center;padding-top:48px;padding-bottom:80px;
   }
   .hero-photo{
     background:linear-gradient(135deg,#dbe6ff,#f3f0ff);
@@ -59,7 +59,7 @@
     transition:background .2s;
   }
   .btn:hover{background:var(--blue-dark);}
-
+ 
   /* Info cards (Образование/Опыт style) */
   .info-grid{
     display:grid;grid-template-columns:1fr 1fr;gap:40px 60px;
@@ -74,7 +74,7 @@
   .info-card ul{color:var(--muted);font-size:14.5px;padding-left:18px;}
   .info-card li{margin-bottom:4px;}
   .info-card p{color:var(--muted);font-size:14.5px;}
-
+ 
   /* Problems section */
   .section-cream{
     background:var(--bg-cream);
@@ -106,9 +106,9 @@
     transition:max-height .25s ease, padding .25s ease;
   }
   .acc-item.open .acc-body{max-height:200px;padding-bottom:20px;}
-
+ 
   /* Services */
-  .services{padding:70px 0;}
+  .services{padding-top:70px;padding-bottom:70px;}
   .services-grid{
     display:grid;grid-template-columns:1fr 1fr;gap:36px 60px;
     max-width:900px;margin:0 auto;
@@ -117,7 +117,7 @@
   .service-top{display:flex;justify-content:space-between;font-weight:700;font-size:17px;margin-bottom:8px;}
   .service-top .price{color:var(--blue);}
   .service p{color:var(--muted);font-size:14.5px;}
-
+ 
   /* Reviews */
   .reviews{background:var(--bg-cream);padding:70px 0;position:relative;}
   .review-wrap{display:flex;align-items:center;justify-content:center;gap:36px;max-width:850px;margin:0 auto;position:relative;}
@@ -138,22 +138,56 @@
     border:none;cursor:pointer;font-size:18px;flex-shrink:0;
   }
   .nav-btn.outline{background:transparent;border:2px solid var(--text);color:var(--text);}
-
+  .review-controls{display:none;}
+  .mobile-only{display:none;}
+ 
   /* Footer / contacts */
-  footer{padding:50px 0;text-align:center;color:var(--muted);font-size:14px;}
+  footer{padding-top:50px;padding-bottom:50px;text-align:center;color:var(--muted);font-size:14px;}
   footer strong{color:var(--text);}
-
+ 
   @media (max-width:760px){
+    .container{padding:0 20px;}
     .hero, .info-grid, .services-grid{grid-template-columns:1fr;}
-    header{flex-direction:column;gap:16px;text-align:center;}
-    header nav{flex-wrap:wrap;justify-content:center;gap:16px;}
-    .review-wrap{flex-direction:column;text-align:center;}
-    .nav-btn{display:none;}
+    header{flex-direction:column;gap:14px;text-align:center;padding-top:18px;padding-bottom:18px;}
+    header nav{flex-wrap:wrap;justify-content:center;gap:14px;font-size:14px;}
+    .contact-info{text-align:center;}
+    .hero{padding:32px 0 56px;gap:32px;}
+    .hero-photo{height:300px;order:-1;}
+    .hero h1{font-size:28px;}
+    .hero p{font-size:15px;max-width:none;}
+    .btn{width:100%;text-align:center;padding:14px 20px;}
+    .info-grid{gap:32px;padding-bottom:56px;}
+    .info-card{gap:16px;}
+    .section-title{font-size:24px;margin-bottom:28px;}
+    .section-cream{padding:48px 0;}
+    .services{padding-top:48px;padding-bottom:48px;}
+    .services-grid{gap:24px;}
+    .acc-item{padding:0 16px;}
+    .acc-header{padding:14px 0;font-size:14.5px;gap:10px;}
+    .acc-item span.plus{width:26px;height:26px;font-size:17px;flex-shrink:0;}
+    .acc-body{font-size:13.5px;}
+    .reviews{padding:48px 0;}
+    .review-wrap{flex-direction:column;text-align:center;gap:16px;}
+    .review-wrap > .nav-btn{display:none;}
+    .review-controls{display:flex;justify-content:center;gap:16px;margin-top:14px;}
+    .review-controls .nav-btn{display:flex;}
+    .avatar{width:72px;height:72px;font-size:22px;}
+    .review-text p{font-size:14.5px;}
+    .review-nav{display:flex;gap:16px;margin-top:16px;}
+    .nav-btn{display:flex;width:36px;height:36px;font-size:16px;position:static;}
+    footer{padding-top:36px;padding-bottom:36px;font-size:13.5px;}
+  }
+ 
+  @media (max-width:420px){
+    .hero h1{font-size:24px;}
+    .container{padding:0 16px;}
+    .info-icon{width:46px;height:46px;font-size:18px;}
+    .service-top{font-size:15.5px;}
   }
 </style>
 </head>
 <body>
-
+ 
 <header class="container">
   <nav>
     <a href="#about">Обо мне</a>
@@ -165,7 +199,7 @@
     Москва, дистанционно
   </div>
 </header>
-
+ 
 <section class="hero container" id="about">
   <div class="hero-photo">
     <svg viewBox="0 0 200 200" fill="none">
@@ -179,7 +213,7 @@
     <a href="https://t.me/KiRiTo12_2" target="_blank" class="btn">Записаться на пробное занятие</a>
   </div>
 </section>
-
+ 
 <section class="container info-grid">
   <div class="info-card">
     <div class="info-icon">🎓</div>
@@ -219,7 +253,7 @@
     </div>
   </div>
 </section>
-
+ 
 <section class="section-cream">
   <h2 class="section-title">Какие задачи решаю</h2>
   <div class="accordion container">
@@ -245,7 +279,7 @@
     </div>
   </div>
 </section>
-
+ 
 <section class="services container" id="services">
   <h2 class="section-title">Услуги и цены</h2>
   <div class="services-grid">
@@ -275,7 +309,7 @@
     </div>
   </div>
 </section>
-
+ 
 <section class="reviews">
   <h2 class="section-title">Отзывы</h2>
   <div class="review-wrap">
@@ -284,6 +318,10 @@
     <div class="review-text">
       <p>Сын никак не мог разобраться с тригонометрией, а после трёх занятий с Андреем тема стала понятной. Объясняет терпеливо, всегда находит способ объяснить по-другому, если что-то не понятно с первого раза. Очень рекомендую!</p>
       <strong>Марина Ковалёва</strong>
+      <div class="review-controls">
+        <button class="nav-btn outline mobile-only">&#8249;</button>
+        <button class="nav-btn mobile-only">&#8250;</button>
+      </div>
     </div>
     <button class="nav-btn">&#8250;</button>
   </div>
@@ -293,12 +331,12 @@
     <span class="dot"></span>
   </div>
 </section>
-
+ 
 <footer id="contacts" class="container">
   <p><strong>Крылов Степан</strong> — репетитор по математике</p>
   <p><a href="tel:+79601850730">+7 960 185 07 30</a> · Москва, дистанционно</p>
 </footer>
-
+ 
 <script>
   // Accordion toggle
   document.querySelectorAll('.acc-item').forEach(item=>{
@@ -316,7 +354,7 @@
       }
     });
   });
-
+ 
   // Reviews carousel
   const reviews = [
     {initials:'МК', text:'Сын никак не мог разобраться с тригонометрией, а после трёх занятий со Степаном тема стала понятной. Объясняет терпеливо, всегда находит способ объяснить по-другому, если что-то не понятно с первого раза. Очень рекомендую!', name:'Марина Ковалёва'},
@@ -334,14 +372,18 @@
     name.textContent = reviews[current].name;
     dots.forEach((d,i)=>d.classList.toggle('active', i===current));
   }
-  document.querySelector('.nav-btn.outline').addEventListener('click',()=>{
-    current = (current - 1 + reviews.length) % reviews.length; render();
+  document.querySelectorAll('.nav-btn.outline').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      current = (current - 1 + reviews.length) % reviews.length; render();
+    });
   });
-  document.querySelector('.nav-btn:not(.outline)').addEventListener('click',()=>{
-    current = (current + 1) % reviews.length; render();
+  document.querySelectorAll('.nav-btn:not(.outline)').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      current = (current + 1) % reviews.length; render();
+    });
   });
   dots.forEach((d,i)=>d.addEventListener('click',()=>{current=i; render();}));
 </script>
-
+ 
 </body>
 </html>
